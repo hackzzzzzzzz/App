@@ -16,17 +16,19 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.EmailAuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class signup extends AppCompatActivity {
 
-    String  emailpattern = "[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+";
-    ProgressDialog progressDialog;
-    FirebaseAuth mauth;
-    FirebaseUser mUser;
-
-
+    String emailpattern = "[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+";
+    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://appp-b7912-default-rtdb.firebaseio.com/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,54 +41,23 @@ public class signup extends AppCompatActivity {
         EditText Phone = (EditText) findViewById(R.id.phonenum);
         EditText Password = (EditText) findViewById(R.id.password);
         EditText Repassword = (EditText) findViewById(R.id.Retype_password);
-
         MaterialButton regbtn = (MaterialButton) findViewById(R.id.registerbutton);
-        progressDialog = new ProgressDialog(this);
-        mauth = FirebaseAuth.getInstance();
-        mUser = mauth.getCurrentUser();
-
-
-
-        String[] items = {"Farmer", "Fisherman", "Student", "Women"};
-        AutoCompleteTextView autoCompleteTxt;
-        ArrayAdapter<String> adapterItems;
-
-
-        autoCompleteTxt = findViewById(R.id.autoComplete);
-
-        adapterItems = new ArrayAdapter<String>(this, R.layout.list_view, items);
-        autoCompleteTxt.setAdapter(adapterItems);
-
-        autoCompleteTxt.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String item = parent.getItemAtPosition(position).toString();
-                Toast.makeText(getApplicationContext(), "Item: " + item, Toast.LENGTH_SHORT).show();
-            }
-        });
-
 
         regbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                performforAuth();
-            }
-
-            private void performforAuth() {
-                String email = Email.getText().toString();
-                String password = Password.getText().toString();
-                String Rpassword = Repassword.getText().toString();
-                String phone = Phone.getText().toString();
-                String username = Username.getText().toString();
+                final String email = Email.getText().toString();
+                final String password = Password.getText().toString();
+                final String Rpassword = Repassword.getText().toString();
+                final String phone = Phone.getText().toString();
+                final String username = Username.getText().toString();
+                //---
 
                 if(!email.matches(emailpattern)){
-
-                    Email.setError("Enter Correct Email");
-
+                    Email.setError("Please Enter Correct Email");
                 }
-
                 else if(password.isEmpty() || password.length()<8){
-                    Password.setError("Enter Correct Password");
+                    Password.setError("Passowrd too Short Minimum 8 characters");
                 }
                 else if(phone.isEmpty() || phone.length()<10){
                     Phone.setError("Enter Correct Number");
@@ -95,43 +66,40 @@ public class signup extends AppCompatActivity {
                     Repassword.setError("Password does not Match");
                 }
                 else{
-                    progressDialog.setMessage("Please Wait On Registration");
-                    progressDialog.setTitle("Registration");
-                    progressDialog.setCanceledOnTouchOutside(false);
-                    progressDialog.show();
-
-
-                    mauth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if(snapshot.hasChild(phone)){
+                                Toast.makeText(signup.this, "Phone is already Registered", Toast.LENGTH_SHORT).show();
+                            }
 
-                            if(task.isSuccessful()){
-                                progressDialog.dismiss();
-                                sendusertonextactivity();
-                                Toast.makeText(signup.this, "Registration Sucessfull", Toast.LENGTH_SHORT).show();
-                            }
                             else{
-                                progressDialog.dismiss();
-                                Toast.makeText(signup.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
+                                databaseReference.child("users").child(phone).child("Username").setValue(username);
+                                databaseReference.child("users").child(phone).child("Email").setValue(email);
+                                databaseReference.child("users").child(phone).child("Phone").setValue(phone);
+                                databaseReference.child("users").child(phone).child("Password").setValue(password);
+
+                                
+                                Toast.makeText(signup.this, "Registration Sucessfull", Toast.LENGTH_SHORT).show();
+                                finish();
                             }
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
                         }
                     });
 
+
+
                 }
 
+                //---
             }
         });
 
-
-
-
-    }
-
-    private void sendusertonextactivity() {
-
-        Intent intent = new Intent(signup.this,MainActivity.class);
-
-        startActivity(intent);
 
     }
 
