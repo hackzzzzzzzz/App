@@ -17,7 +17,7 @@
 
 
         <activity
-            android:name=".MainActivity"
+            android:name=".homepage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,8 +31,8 @@
         </activity>
         <activity android:name=".signup"/>
 
-        <activity android:name=".homepage"/>
         <activity android:name=".scheme"/>
+        <activity android:name=".MainActivity"/>
         <activity android:name=".aboutus"/>
         <activity android:name=".calender"/>
         <activity android:name=".feedback"/>
