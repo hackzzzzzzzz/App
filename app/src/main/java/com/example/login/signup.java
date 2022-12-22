@@ -28,7 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 public class signup extends AppCompatActivity {
 
     String emailpattern = "[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+";
-    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://appp-b7912-default-rtdb.firebaseio.com/");
+    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +79,7 @@ public class signup extends AppCompatActivity {
                                 databaseReference.child("users").child(phone).child("Phone").setValue(phone);
                                 databaseReference.child("users").child(phone).child("Password").setValue(password);
 
-                                
+
                                 Toast.makeText(signup.this, "Registration Sucessfull", Toast.LENGTH_SHORT).show();
                                 finish();
                             }

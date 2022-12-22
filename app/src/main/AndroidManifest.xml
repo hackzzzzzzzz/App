@@ -17,7 +17,7 @@
 
 
         <activity
-            android:name=".MainActivity"
+            android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,6 +38,8 @@
         <activity android:name=".feedback"/>
         <activity android:name=".language"/>
         <activity android:name=".waste"/>
+        <activity android:name=".Forgetpass"/>
+        <activity android:name=".passchange"/>
     </application>
 
 </manifest>

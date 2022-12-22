@@ -3,14 +3,12 @@ package com.example.login;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
@@ -65,7 +63,7 @@ public class aboutus extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.logout:
-                        intent = new Intent(aboutus.this, MainActivity.class);
+                        intent = new Intent(aboutus.this, Login.class);
                         startActivity(intent);
                         break;
 

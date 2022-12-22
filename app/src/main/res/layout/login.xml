@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context=".MainActivity">
+    tools:context=".Login">
 
     <TextView
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:gravity="center"
         android:id="@+id/Knowyourbenefits"
         android:textStyle="bold">
-    </TextView>>
+    </TextView>
 
     <TextView
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
         android:layout_below="@+id/Knowyourbenefits"
         android:gravity="center"
         android:textStyle="bold">
-    </TextView>>
+    </TextView>
 
     <EditText
         android:id="@+id/phonenum"
@@ -57,7 +57,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="5dp"
         android:textColor="@color/black"
         android:background="#30ffffff"
         android:drawableStart="@drawable/ic_baseline_lock_24"
@@ -69,15 +69,32 @@
 
     </EditText>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Forget Password ?"
+        android:id="@+id/forgetpass"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/password"
+        android:textStyle="bold"
+        android:layout_marginRight="20dp"
+        android:textSize="15dp"
+        android:gravity="end"
+        android:textColor="@color/black"
+        >
+
+    </TextView>
+
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/loginbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/loginbutton"
-        android:layout_below="@id/password"
-        android:text="LOGIN"
-        android:layout_margin="20dp"
+        android:layout_below="@id/forgetpass"
+        android:layout_marginTop="-204dp"
+        android:layout_marginLeft="134dp"
+        android:layout_marginBottom="15dp"
         android:gravity="center"
-        android:layout_centerHorizontal="true">
+        android:text="LOGIN">
 
     </com.google.android.material.button.MaterialButton>
 

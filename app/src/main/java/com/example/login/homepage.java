@@ -29,7 +29,7 @@ public class homepage extends AppCompatActivity implements View.OnClickListener,
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.homepage);
         //------------------------------------------------------------------------------------------
         // Initialization of items in the homepage
         schemecard = (CardView) findViewById(R.id.schemes);
@@ -130,7 +130,7 @@ public class homepage extends AppCompatActivity implements View.OnClickListener,
                 startActivity(intent);
                 break;
             case R.id.logout:
-                intent = new Intent(homepage.this, MainActivity.class);
+                intent = new Intent(homepage.this, Login.class);
                 startActivity(intent);
                 break;
 

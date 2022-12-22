@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Login</string>
+    <string name="enter_new_password">ENTER NEW PASSWORD</string>
 </resources>
