@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Forgetpass">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="356dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="KNOW YOUR BENEFITS"
+            android:textSize="35dp"
+            android:layout_margin="50dp"
+            android:gravity="center"
+            android:id="@+id/Knowyourbenefits"
+            android:textStyle="bold">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FORGET PASSWORD"
+            android:textSize="27dp"
+            android:layout_margin="10dp"
+            android:textColor="#ffffff"
+            android:id="@+id/Signin"
+            android:layout_below="@+id/Knowyourbenefits"
+            android:gravity="center"
+            android:textStyle="bold">
+        </TextView>
+
+
+        <EditText
+            android:id="@+id/phonenum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="50dp"
+            android:background="#30121111"
+            android:layout_below="@+id/Signin"
+            android:drawableStart="@drawable/ic_baseline_phone_24"
+            android:drawablePadding="20dp"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black">
+
+        </EditText>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Send OTP"
+                android:id="@+id/otp"
+                android:textColor="@color/black"
+                android:layout_below="@id/phonenum"
+                android:gravity="end"
+                android:layout_marginRight="33dp"
+                android:layout_marginTop="-30dp"
+                android:textSize="17dp">
+
+            </TextView>
+
+        <EditText
+            android:id="@+id/enterotp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="-290dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="50dp"
+            android:background="#30121111"
+            android:layout_below="@+id/otp"
+            android:drawableStart="@drawable/ic_baseline_otppassword_24"
+            android:drawablePadding="20dp"
+            android:hint="Enter OTP Sent to Mobile"
+            android:inputType="number"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black">
+
+        </EditText>
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/confirmbutton"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/enterotp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:gravity="center"
+            android:text="Confirm">
+
+        </com.google.android.material.button.MaterialButton>
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

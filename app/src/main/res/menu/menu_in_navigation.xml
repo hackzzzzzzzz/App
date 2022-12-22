@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Homepage"
+        android:id="@+id/home"
+        android:icon="@drawable/ic_baseline_home_24"/>
+
+    <item
+        android:title="calender"
+        android:id="@+id/calen"
+        android:icon="@drawable/calendar"/>
+    <item
+        android:title="Aboutus"
+        android:id="@+id/about"
+        android:icon="@drawable/info"/>
+    <item
+        android:title="Feedback"
+        android:id="@+id/feedback"
+        android:icon="@drawable/ic_baseline_feedback_24"/>
+    <item
+        android:title="Logout"
+        android:id="@+id/logout"
+        android:icon="@drawable/ic_baseline_logout_24"/>
+
+</menu>

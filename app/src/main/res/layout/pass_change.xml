@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".passchange">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="356dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="KNOW YOUR BENEFITS"
+            android:textSize="35dp"
+            android:layout_margin="50dp"
+            android:gravity="center"
+            android:id="@+id/Knowyourbenefits"
+            android:textStyle="bold">
+        </TextView>
+
+        <EditText
+            android:id="@+id/phonenum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="50dp"
+            android:background="#30121111"
+            android:layout_below="@id/Knowyourbenefits"
+            android:drawableStart="@drawable/ic_baseline_phone_24"
+            android:drawablePadding="20dp"
+            android:hint="ENTER MOBILE NUMBER"
+            android:inputType="phone"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black">
+        </EditText>
+
+        <EditText
+            android:id="@+id/newpass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="-9dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="50dp"
+            android:background="#30121111"
+            android:layout_below="@id/phonenum"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="20dp"
+            android:hint="@string/enter_new_password"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black">
+        </EditText>
+
+        <EditText
+            android:id="@+id/confirmnewpass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="-9dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="50dp"
+            android:background="#30121111"
+            android:layout_below="@id/newpass"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="20dp"
+            android:hint="RE-ENTER NEW PASSWORD"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black">
+        </EditText>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/updateconfirm"
+            android:layout_below="@id/confirmnewpass"
+            android:hint="Confirm"
+            android:textColorHint="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-thin"
+            android:clickable="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-15dp"
+            >
+
+        </com.google.android.material.button.MaterialButton>
+
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
