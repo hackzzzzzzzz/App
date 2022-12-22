@@ -71,7 +71,8 @@ public class Forgetpass extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String phonenumm = phone.getText().toString();
+                String phonee = phone.getText().toString();
+                String phonenumm = "+91"+phonee;
 
 
                 if(phonenumm.isEmpty() || phonenumm.length()<10){

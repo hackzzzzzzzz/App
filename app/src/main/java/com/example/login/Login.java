@@ -63,7 +63,9 @@ public class Login extends AppCompatActivity {
             public void onClick(View v)
             {
 
-                String phone = Phone.getText().toString();
+                String shb = Phone.getText().toString();
+                String phone = "+91"+shb;
+
                 String password = Password.getText().toString();
 
 

@@ -45,7 +45,8 @@ public class passchange extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                final String phone = phonenumber.getText().toString();
+                final String phonee = phonenumber.getText().toString();
+                final String phone = "+91"+phonee;
                 final String pass1 = newpass.getText().toString();
                 final String pass2 = confirmnewpass.getText().toString();
 

@@ -76,7 +76,7 @@ public class signup extends AppCompatActivity {
                             else{
                                 databaseReference.child("users").child(phone).child("Username").setValue(username);
                                 databaseReference.child("users").child(phone).child("Email").setValue(email);
-                                databaseReference.child("users").child(phone).child("Phone").setValue(phone);
+                                databaseReference.child("users").child(phone).child("Phone").setValue("+91"+phone);
                                 databaseReference.child("users").child(phone).child("Password").setValue(password);
 
 
