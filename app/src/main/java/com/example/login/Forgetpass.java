@@ -75,6 +75,8 @@ public class Forgetpass extends AppCompatActivity {
                 String phonenumm = "+91"+phonee;
 
 
+
+
                 if(phonenumm.isEmpty() || phonenumm.length()<10){
                     phone.setError("Enter Correct Number");
                 }
@@ -173,6 +175,7 @@ public class Forgetpass extends AppCompatActivity {
 
     private void openpasschange(PhoneAuthCredential credential) {
         Intent intent = new Intent(Forgetpass.this , passchange.class);
+
         startActivity(intent);
         finish();
     }

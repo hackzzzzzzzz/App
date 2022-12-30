@@ -29,6 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 public class passchange extends AppCompatActivity {
     DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +45,8 @@ public class passchange extends AppCompatActivity {
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
 
                 final String phonee = phonenumber.getText().toString();
                 final String phone = "+91"+phonee;
